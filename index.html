@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallAnimes</title>
+</head>
+
+<header>
+    
+    <div class="log">
+        <img class="logo" src="./logo4.png" alt="">
+
+    </div>
+
+</header>
+
+<body>
+    <style>
+        img.logo{
+
+            display: block;
+            margin-left: 35%;
+            margin-right: auto;
+            width: 500px;
+            height: 300px;
+            
+
+        }
+        .container{
+            background-color: black;
+            display: block;
+            gap: 4rem;
+            
+        }
+        
+        li img{
+
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            
+        }
+
+        img.conteudo{
+
+            position: relative;
+            left: 45%;
+            margin-left: -150px;
+
+        }
+
+        .cont{
+
+            background-color: black;
+            display: block;
+            gap: 4rem;
+
+        }
+
+        img.cont{
+
+        position: relative;
+        left: 45%;
+        margin-left: -150px;
+
+        }
+
+        img.link{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        footer{
+            background-color: grey;
+        }
+
+        body{
+            background-color: grey;
+        }
+
+        .log{
+            background-color: black;
+        }
+      
+
+    </style>
+
+    <div class="container"></div>
+    <div class="cont"></div>
+
+    <script>
+        (async() =>{
+            const response = await fetch('./pinterest.json');
+            const data = await response.json ();
+
+            //
+            const htmlList = data
+            .map( ({src}) => `<li><img class="conteudo" src="${src}"></li>`)
+            .join('');
+            //
+            document.querySelector('.container').innerHTML = htmlList;
+
+        })();
+    </script>
+
+    <script>
+        (async() =>{
+            const response2 = await fetch('./pinterest2.json');
+            const data2 = await response2.json ();
+
+            //
+            const htmlList2 = data2
+            .map( ({src}) => `<li><img class="cont" src="${src}"></li>`)
+            .join('');
+            //
+            document.querySelector('.cont').innerHTML = htmlList2;
+
+        })();
+
+
+    </script>
+
+  
+
+</body>
+
+<footer>
+    
+    <h2>as imagens do site são retiradar do pinterest, e são atualizadas todos os dias</h2>
+
+    
+
+    <a href="https://www.instagram.com/herbethlucas007/"><h3>siga o criador do site no instagram</h3></a>
+    
+
+    
+
+</footer>
+
+
+</html>
